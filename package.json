@@ -1,0 +1,19 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "brain-games.js",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  },
+  "type": "module",
+   "bin": {
+  "brain-games": "bin/brain-games.js"
+},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bulat",
+  "license": "ISC"
+}
