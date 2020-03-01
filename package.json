@@ -2,15 +2,21 @@
   "name": "bin",
   "version": "1.0.0",
   "description": "project",
-  "main": "brain-games.js",
-  "dependencies": {
-    "http-server": "^0.12.1"
-  },
   "type": "module",
-   "bin": {
-  "brain-games": "bin/brain-games.js"
-},
-  "devDependencies": {},
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "http-server": "^0.12.1",
+    "readline-sync": "^1.4.10"
+  },
+  "bin": {
+    "brain-games": "brain-games.js"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
