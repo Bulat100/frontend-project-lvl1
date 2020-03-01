@@ -1,8 +1,6 @@
-name: Node.js
+name: node.js
 
-on:
-  - push
-  - pull_request
+on: [push]
 
 jobs:
   build:
@@ -15,15 +13,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install       
-      - run: npm run build --if-present
-      - run: npx eslint . 
-        env:
-          CI: true
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Run linter
+        run: make lint
       
 
       
