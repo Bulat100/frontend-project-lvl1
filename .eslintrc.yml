@@ -3,6 +3,9 @@
 env:
   node: true
 
+plugins:
+  - import
+  
 extends:
   - 'airbnb-base'
 
