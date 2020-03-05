@@ -6,3 +6,5 @@ publish:
 	npm publish --dry-run
 lint: 
 	npx eslint .
+gamestart: 
+	npx node brain-even.js
