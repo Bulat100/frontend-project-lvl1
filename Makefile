@@ -1,10 +1,12 @@
 install: 
 	npm install
 start:
-	npx node brain-games.js
+	npx node games/brain-games.js
 publish: 
 	npm publish --dry-run
 lint: 
 	npx eslint .
-gamestart: 
-	npx node brain-even.js
+isEvenGame: 
+	npx node bin/brain-even.js
+calcGame: 
+	npx node bin/brain-calc.js

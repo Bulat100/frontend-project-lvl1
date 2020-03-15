@@ -1,34 +1,28 @@
 import readlineSync from 'readline-sync';
 
-const getName = readlineSync.question('May I have your name?');
-export const greeting = () => console.log(`Hello, ${getName}!`);
-
-export const welcoming = () => console.log('Welcome to the Brain Games!');
-export const getAnswer = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const logic = (attemts) => {
-    const isEven = (number) => number % 2 === 0;
-    // random number from 0 to 99
-    const rndMaker = () => Math.floor(Math.random() * 100);
-    const randomNum = rndMaker();
-    const question = () => readlineSync.question('Your answer:');
-    const again = () => console.log(`Let's try again, ${getName}!`);
-    const isCorrect = (answer, num) => (answer === 'yes' && isEven(num)) || (answer === 'no' && !isEven(num));
-    if (attemts === 0) {
-      return console.log(`Congratulations, ${getName}`);
+export default (rules, gameData) => {
+  const getName = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${getName}!`);
+  console.log('Welcome to the Brain Games!');
+  console.log(rules);
+  const win = (name) => console.log(`Congratulations, ${name}`);
+  const again = (name) => console.log(`Let's try again, ${name}!`);
+  const iter = (attempts) => {
+    if (attempts === 3) {
+      return win(getName);
     }
-    console.log(`Question: ${randomNum}`);
-    const response = question();
-    if (response !== 'yes' && response !== 'no') {
-      console.log('Answer should be yes or no');
-      return again();
-    }
-    if (isCorrect(response, randomNum)) {
+    const newQuestion = gameData();
+    const content = newQuestion[0];
+    const correctAnswer = newQuestion[1];
+    readlineSync.question(`Question: ${content}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === correctAnswer) {
       console.log('Correct!');
-      return logic(attemts - 1);
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      return again(getName);
     }
-    console.log('yes is wrong answer ;(. Correct answer was no');
-    return again();
+    return iter(attempts + 1);
   };
-  return logic(3);
+  iter(0);
 };
