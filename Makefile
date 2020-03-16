@@ -8,3 +8,6 @@ isEvenGame:
 	npx node bin/brain-even.js
 calcGame: 
 	npx node bin/brain-calc.js
+gcdGame:
+  npx node bin/brain-gcd.js
+	
