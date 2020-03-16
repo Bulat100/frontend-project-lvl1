@@ -1,7 +1,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d427d960e5fca1e725b4/maintainability)](https://codeclimate.com/github/Bulat100/frontend-project-lvl1/maintainability)
 [![Node CI](https://github.com/Bulat100/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/Bulat100/frontend-project-lvl1/actions)
 ### Brain Even
-First game in this program is Brain Even. It invites you to decide if the number is even or not. If your answers are true three times in a row you will win. You can start the game with the following command. 
+First game in this program is Brain Even. It invites you to decide if the number is even or not. If your answers are correct three times in a row you will win. You can start the game with the following command. 
 ```
 make isEvenGame
 ```
@@ -13,3 +13,10 @@ Command to start the Brain Calc:
 make calcGame
 ```
 [![asciicast](https://asciinema.org/a/RAhyactPKPQI3b7L2CDyTKdew.svg)](https://asciinema.org/a/RAhyactPKPQI3b7L2CDyTKdew)
+### Brain gcd
+Third game is Brain Gcd.This game invites you to find greatest common divisor from two random numbers.The rules is still the same.
+Command to start the Brain Gcd:
+```
+make gcdGame
+```
+[![asciicast](https://asciinema.org/a/EjMKFjHHB9TzGl7yLlX2o2AWO.svg)](https://asciinema.org/a/EjMKFjHHB9TzGl7yLlX2o2AWO)
