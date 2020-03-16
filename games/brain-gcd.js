@@ -1,12 +1,7 @@
 import engine from '../src/index.js';
+import getRandomIntInclusive from '../src/randomNumMaker.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
-// random number from min to max.
-const getRandomIntInclusive = (min, max) => {
-  const ceiledMin = Math.ceil(min);
-  const flooredMax = Math.floor(max);
-  return Math.floor(Math.random() * (flooredMax - ceiledMin + 1)) + ceiledMin;
-};
 const gcd = (a, b) => {
   if (!b) {
     return a;
