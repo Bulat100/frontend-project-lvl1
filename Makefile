@@ -10,4 +10,5 @@ calcGame:
 	npx node bin/brain-calc.js
 gcdGame:
 	npx node bin/brain-gcd.js
-
+progressionGame:
+	npx node bin/brain-progression.js
