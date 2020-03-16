@@ -20,3 +20,10 @@ Command to start the Brain Gcd:
 make gcdGame
 ```
 [![asciicast](https://asciinema.org/a/EjMKFjHHB9TzGl7yLlX2o2AWO.svg)](https://asciinema.org/a/EjMKFjHHB9TzGl7yLlX2o2AWO)
+
+Fourth game is Brain Progression. You must enter a missing number in the progression.
+Command to start the Brain Progression:
+```
+make progressionGame
+```
+[![asciicast](https://asciinema.org/a/KnvneZNrjDfhNTo6DPj9CYzjB.svg)](https://asciinema.org/a/KnvneZNrjDfhNTo6DPj9CYzjB)
