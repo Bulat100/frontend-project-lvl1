@@ -27,3 +27,10 @@ Command to start the Brain Progression:
 make progressionGame
 ```
 [![asciicast](https://asciinema.org/a/KnvneZNrjDfhNTo6DPj9CYzjB.svg)](https://asciinema.org/a/KnvneZNrjDfhNTo6DPj9CYzjB)
+Fit
+The last game in this programm is Brain Prime. This game invites you to decide if the number is prime or not.
+Command to start the Brain Prime:
+```
+make isPrimeGame
+```
+[![asciicast](https://asciinema.org/a/xgzj1EVUmGNv4PJ0JQG8yjYWi.svg)](https://asciinema.org/a/xgzj1EVUmGNv4PJ0JQG8yjYWi)
