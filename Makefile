@@ -12,3 +12,5 @@ gcdGame:
 	npx node bin/brain-gcd.js
 progressionGame:
 	npx node bin/brain-progression.js
+isPrimeGame:
+	npx node bin/brain-prime.js
