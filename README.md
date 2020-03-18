@@ -33,3 +33,7 @@ Command to start the Brain Prime:
 make isPrimeGame
 ```
 [![asciicast](https://asciinema.org/a/xgzj1EVUmGNv4PJ0JQG8yjYWi.svg)](https://asciinema.org/a/xgzj1EVUmGNv4PJ0JQG8yjYWi)
+
+If you have made a mistake in one of this games,error message will be shown.
+
+[![asciicast](https://asciinema.org/a/ANY51b9NYiPufMLAfP7N7I8m2.svg)](https://asciinema.org/a/ANY51b9NYiPufMLAfP7N7I8m2)
