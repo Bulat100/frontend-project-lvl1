@@ -26,5 +26,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "bulat",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "brain-games, First project"
+  ]
 }

@@ -1,5 +1,5 @@
-import engine from '../src/index.js';
-import getRandomIntInclusive from '../src/randomNumMaker.js';
+import engine from '../index.js';
+import getRandomIntInclusive from '../randomNumMaker.js';
 
 const gameDescription = 'What number is missing in the progression?';
 const getProgression = (step) => {
@@ -14,7 +14,7 @@ const getProgression = (step) => {
   };
   return iter(1, result);
 };
-const gameData = () => {
+const getGameData = () => {
   // d is common difference of progression
   const d = getRandomIntInclusive(1, 99);
   const progression = getProgression(d);
@@ -23,8 +23,7 @@ const gameData = () => {
   const correctAnswer = progression[randomPosition];
   // progression for question
   progressionClone[randomPosition] = '..';
-  const questionContent = progressionClone.join(' ');
-  const data = [questionContent, String(correctAnswer)];
-  return data;
+  const question = progressionClone.join(' ');
+  return [question, String(correctAnswer)];
 };
-export default () => engine(gameDescription, gameData);
+export default () => engine(gameDescription, getGameData);

@@ -5,11 +5,10 @@ export default (rules, gameData) => {
   console.log(`Hello, ${getName}!`);
   console.log('Welcome to the Brain Games!');
   console.log(rules);
-  const win = (name) => console.log(`Congratulations, ${name}`);
-  const again = (name) => console.log(`Let's try again, ${name}!`);
   const iter = (attempts) => {
-    if (attempts === 3) {
-      return win(getName);
+    const attemptsToWin = 3;
+    if (attempts === attemptsToWin) {
+      return console.log(`Congratulations, ${getName}`);
     }
     const newQuestion = gameData();
     const content = newQuestion[0];
@@ -20,7 +19,7 @@ export default (rules, gameData) => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      return again(getName);
+      return console.log(`Let's try again, ${getName}!`);
     }
     return iter(attempts + 1);
   };

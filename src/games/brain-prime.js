@@ -1,5 +1,5 @@
-import engine from '../src/index.js';
-import getRandomIntInclusive from '../src/randomNumMaker.js';
+import engine from '../index.js';
+import getRandomIntInclusive from '../randomNumMaker.js';
 
 const gameDescription = 'Answer yes if given number is prime. Otherwise answer no.';
 const isPrime = (num) => {
@@ -17,11 +17,10 @@ const isPrime = (num) => {
   };
   return iter(2, num);
 };
-const gameData = () => {
+const getGameData = () => {
   const randomNum = getRandomIntInclusive(1, 999);
   const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
-  const questionContent = `${randomNum}`;
-  const data = [questionContent, correctAnswer];
-  return data;
+  const question = `${randomNum}`;
+  return [question, correctAnswer];
 };
-export default () => engine(gameDescription, gameData);
+export default () => engine(gameDescription, getGameData);
