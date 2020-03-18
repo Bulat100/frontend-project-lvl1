@@ -20,7 +20,7 @@ const isPrime = (num) => {
 const getGameData = () => {
   const randomNum = getRandomIntInclusive(1, 999);
   const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
-  const question = `${randomNum}`;
+  const question = String(randomNum);
   return [question, correctAnswer];
 };
 export default () => engine(gameDescription, getGameData);
