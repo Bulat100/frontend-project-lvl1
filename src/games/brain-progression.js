@@ -2,24 +2,23 @@ import engine from '../index.js';
 import getRandomIntInclusive from '../randomNumMaker.js';
 
 const gameDescription = 'What number is missing in the progression?';
-const getProgression = (step) => {
-  const result = [];
-  result[0] = getRandomIntInclusive(1, 99);
-  const iter = (n, acc) => {
-    if (acc.length === 10) {
+const progressionLength = 10;
+const generateProgression = (start, step, length) => {
+  const iter = (counter, num, acc) => {
+    if (counter > length) {
       return acc;
     }
-    const next = acc[n - 1] + step;
-    return iter(n + 1, acc.concat(next));
+    return iter(counter + 1, num + step, [...acc, num]);
   };
-  return iter(1, result);
+  return iter(1, start, []);
 };
 const getGameData = () => {
   // d is common difference of progression
   const d = getRandomIntInclusive(1, 99);
-  const progression = getProgression(d);
+  const startNum = getRandomIntInclusive(1, 99);
+  const randomPosition = getRandomIntInclusive(0, 9);
+  const progression = generateProgression(startNum, d, progressionLength);
   const progressionClone = progression.slice();
-  const randomPosition = Math.floor(Math.random() * (progression.length));
   const correctAnswer = progression[randomPosition];
   // progression for question
   progressionClone[randomPosition] = '..';
