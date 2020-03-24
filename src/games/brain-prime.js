@@ -1,21 +1,21 @@
 import engine from '../index.js';
-import getRandomIntInclusive from '../randomNumMaker.js';
+import getRandomIntInclusive from '../utils.js';
 
 const gameDescription = 'Answer yes if given number is prime. Otherwise answer no.';
-const isPrime = (num) => {
-  if (num < 2) {
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
-  const iter = (counter, givenNum) => {
-    if (counter === givenNum) {
+  const iter = (divisor, n) => {
+    if (divisor === n) {
       return true;
     }
-    if (givenNum % counter === 0) {
+    if (n % divisor === 0) {
       return false;
     }
-    return iter(counter + 1, givenNum);
+    return iter(divisor + 1, n);
   };
-  return iter(2, num);
+  return iter(2, number);
 };
 const getGameData = () => {
   const randomNum = getRandomIntInclusive(1, 999);

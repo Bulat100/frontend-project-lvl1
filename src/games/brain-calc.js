@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import getRandomIntInclusive from '../randomNumMaker.js';
+import getRandomIntInclusive from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -15,8 +15,8 @@ const getResultOfCalc = (first, second, operator) => {
       return first * second;
 
     default:
+      return false;
   }
-  return false;
 };
 
 const getGameData = () => {
@@ -24,7 +24,7 @@ const getGameData = () => {
   const firstNum = getRandomIntInclusive(1, 99);
   const secondNum = getRandomIntInclusive(1, 99);
   // get random operation from array.
-  const operator = operators[getRandomIntInclusive(0, 2)];
+  const operator = operators[getRandomIntInclusive(0, (operators.length - 1))];
   const correctAnswer = getResultOfCalc(firstNum, secondNum, operator);
   const question = `${firstNum} ${operator} ${secondNum}`;
   return [question, String(correctAnswer)];
