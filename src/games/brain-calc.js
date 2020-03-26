@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import startEngine from '../index.js';
 import getRandomIntInclusive from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
@@ -29,4 +29,4 @@ const getGameData = () => {
   const question = `${firstNum} ${operator} ${secondNum}`;
   return [question, String(correctAnswer)];
 };
-export default () => engine(gameDescription, getGameData);
+export default () => startEngine(gameDescription, getGameData);

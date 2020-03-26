@@ -1,4 +1,4 @@
-import engine from '../index.js';
+import startEngine from '../index.js';
 import getRandomIntInclusive from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
@@ -9,4 +9,4 @@ const getGameData = () => {
   const question = String(randomNum);
   return [question, correctAnswer];
 };
-export default () => engine(gameDescription, getGameData);
+export default () => startEngine(gameDescription, getGameData);

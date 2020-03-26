@@ -1,28 +1,28 @@
-import engine from '../index.js';
+import startEngine from '../index.js';
 import getRandomIntInclusive from '../utils.js';
 
 const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
 const generateProgression = (start, step, length) => {
-  const iter = (counter, num, acc) => {
-    if (counter > length) {
-      return acc;
+  const iter = (index, current, progression) => {
+    if (index > length) {
+      return progression;
     }
-    return iter(counter + 1, num + step, [...acc, num]);
+    return iter(index + 1, current + step, [...progression, current]);
   };
   return iter(1, start, []);
 };
 const getGameData = () => {
-  // d is common difference of progression
-  const d = getRandomIntInclusive(1, 99);
-  const startNum = getRandomIntInclusive(1, 99);
-  const randomPosition = getRandomIntInclusive(0, 9);
-  const progression = generateProgression(startNum, d, progressionLength);
+  // common difference of progression
+  const difference = getRandomIntInclusive(1, 99);
+  const firstMember = getRandomIntInclusive(1, 99);
+  const hiddenMemberIndex = getRandomIntInclusive(0, (progressionLength - 1));
+  const progression = generateProgression(firstMember, difference, progressionLength);
   const progressionClone = progression.slice();
-  const correctAnswer = progression[randomPosition];
+  const correctAnswer = progression[hiddenMemberIndex];
   // progression for question
-  progressionClone[randomPosition] = '..';
+  progressionClone[hiddenMemberIndex] = '..';
   const question = progressionClone.join(' ');
   return [question, String(correctAnswer)];
 };
-export default () => engine(gameDescription, getGameData);
+export default () => startEngine(gameDescription, getGameData);
